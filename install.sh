@@ -14,7 +14,8 @@ fi
 if [ ! -e "${python27}" ]; then
   if [ ${os_version} -eq '6' ]; then
     rpm -ivh https://rhel6.iuscommunity.org/ius-release.rpm
-    rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+    # rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+    yum install epel-release -y
 
     yum install -y python27 python27-devel python27-pip python27-setuptools python27-virtualenv --enablerepo=ius
 
